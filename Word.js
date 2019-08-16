@@ -15,7 +15,10 @@ function Word(word){
   this.guessLetter = (guessedLetter) => {
     let guessedCorrect = false;
     this.letters.forEach(letter => {
-      if(letter.guess(guessedLetter)){
+      if(letter.guessed === true){
+        guessedCorrect = true
+      }
+      else if(letter.guess(guessedLetter ) ){
         this.correct += 1;
         guessedCorrect = true
       }
